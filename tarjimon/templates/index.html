@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Online Tarjimon Dastur</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'semantic-ui/semantic.css' %}">
+  </head>
+  <body>
+    <div class="ui header segment">
+
+        <div class="ui container">
+          <h1 class="ui header">Online Tarjimon</h1>
+          <div class="ui divider">
+            <p>Telik, qulaylik, bepul online lug'at</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<div class="ui container">
+  <div class="ui placeholder segment">
+    <div class="ui ixon header">
+      O'zbekcha-Inglizcha, Inglizcha-O'zbekcha
+
+    </div>
+    <div class="ui inline" style="width:90%">
+      <div class="ui massiv form search">
+        <form method="GET" action="/" class="ui icon input" style="width:100%">
+          <input name="q" value = "{{q}}" type="text" class="promt"placeholder="So'zni kiriting...">
+          <i class="ui search icon"></i>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+<div class="ui piled segment">
+  <h4 class="ui header">
+    Natija:
+
+  </h4>
+<table class="ui celled large olive table">
+  <thead>
+    <tr>
+      <th><i class="united kingdom flag"></i> Inglizcha</th>
+      <th><i class="uzbekistan flag"> </i>O'zbekcha</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if natija %}
+    {% for tarjima in natija %}
+    <tr>
+      <td>{{ tarjima.eng }}</td>
+      <td>{{ tarjima.uzb }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+  </tbody>
+</table>
+</div>
+</div>
+
+  </body>
+</html>
